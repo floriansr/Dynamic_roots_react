@@ -10,10 +10,7 @@ const Book = () => {
 		setCurrentBook(dataBooks.find((x) => x.slug === bookSlug));
 	}, [bookSlug]);
 
-	const display = () => {
-		if (!currentBook) {
-			return "";
-		}
+	const renderedItem = () => {
 		return (
 			<div>
 				<h1>{currentBook.title}</h1>
@@ -23,7 +20,7 @@ const Book = () => {
 		);
 	};
 
-	return display();
+	return <> {!currentBook ? "" : renderedItem()} </>;
 };
 
 export default Book;
